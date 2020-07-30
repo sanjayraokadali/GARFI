@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "GarfiApp/basepage.html" %}
+
+{% block body_block %}
+
+  <h2>Please enter your code here </h2><br>
+<div class="jumbotron">
+  <form  action="{% url 'GarfiApp:save_points' %}" method="post">
+    {% csrf_token %}
+
+    <input type="hidden" name="name" value="{{user.name}}">
+    <input type="hidden" name="email" value="{{user.email}}">
+    <input type="hidden" name="password" value="{{user.password}}">
+    <input type="hidden" name="code" value="{{code}}">
+    <input type="text" name="input-code" placeholder="Enter Code">
+    <input type="submit" class="btn btn-outline-danger"  name="" value="Add Points">
+
+  </form>
+
+  <script type="text/javascript">
+    alert("Your code is {{code}}")
+  </script>
+</div>
+
+
+
+
+
+{% endblock  %}

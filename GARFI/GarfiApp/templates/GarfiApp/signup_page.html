@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "GarfiApp/basepage.html" %}
+
+{% block body_block %}
+<form action="{% url 'GarfiApp:signup_success' %}" method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label>First Name:</label>
+    <input type="text" class="form-control" name="firstname" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">Please enter your First Name</small>
+  </div>
+  <div class="form-group">
+    <label>Last Name:</label>
+    <input type="text" class="form-control" name="lastname" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">Please enter your Last Name</small>
+  </div>
+  <div class="form-group">
+    <label>Email ID:</label>
+    <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">Please enter your Email ID</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password:</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+  </div>
+  <div class="form-group">
+    <label>Mobile Number:</label>
+    <input type="number" class="form-control" name="mobilenumber" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">Please enter your Mobile Number</small>
+  </div>
+  <button type="submit" class="btn btn-success">Sign Up</button>
+</form>
+
+
+
+{% endblock  %}

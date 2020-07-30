@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "GarfiApp/basepage.html" %}
+
+{% block body_block %}
+    <form action="{% url 'GarfiApp:inputcode' %}"  method="post">
+      {% csrf_token %}
+
+
+    <div class="jumbotron">
+
+        <h1>Logged in successfully!</h1>
+        <h2>Welcome {{ dict.firstname }} {{ dict.lastname }}</h2><br>
+        <input type="hidden" name="email" value="{{dict.email}}">
+        <input type="hidden" name="password" value="{{dict.password}}">
+        <input type="hidden" name="username" value="{{dict.firstname}}">
+        <input type="hidden" name="code" value="{{code}}">
+        <h3> Available points: {{ dict.points }} </h3>
+
+    </div>
+    <input type="submit" class="btn btn-outline-primary " name="" value="Collect Points">
+    </form>
+
+{% endblock %}
