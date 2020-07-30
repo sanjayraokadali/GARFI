@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "App/base.html" %}
+
+{% block body_block %}
+<h2>Form</h2>
+<form action="{% url 'App:displayview' %}" method="post">
+  {% csrf_token %}
+
+  {{ form.as_p }}
+  <input type="submit" name="" value="Submit">
+</form>
+
+{% endblock %}
